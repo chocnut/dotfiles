@@ -1,3 +1,4 @@
+set encoding=UTF-8
 filetype indent on
 set number
 set backspace=indent,eol,start
@@ -26,16 +27,28 @@ Plug 'easymotion/vim-easymotion'
 Plug 'rking/ag.vim'
 Plug 'wikitopian/hardmode'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'mxw/vim-jsx',
 Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentline'
 Plug 'sheerun/vim-polyglot'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'w0rp/ale'
+" Plug 'nlknguyen/papercolor-theme'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'vim-airline/vim-airline-themes'
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+" Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
-let g:seoul256_background = 233
+" let g:seoul256_background = 233
 
 " Color Scheme
 syntax enable
@@ -51,12 +64,17 @@ set backupdir=/private/tmp
 set dir=/private/tmp
 set hlsearch
 set ignorecase
+
+set background=light
+" colorscheme PaperColor
 " colo seoul256
-colorscheme seoul256
+" colorscheme seoul256
+colorscheme dracula
+
 
 let g:indent_guide_start_level=2
 let g:airline_powerline_fonts = 1
-let g:airline_theme='luna'
+let g:airline_theme='dracula'
 set signcolumn=yes
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -125,7 +143,6 @@ let vim_markdown_preview_browser='Google Chrome'
 let vim_markdown_preview_toggle=3
 
 let g:deoplete#enable_at_startup = 1
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 set spell
 set complete+=kspell
@@ -143,3 +160,8 @@ let g:fzf_action = {
 
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+set path=.,src,node_nodules
+set suffixesadd=.js,.jsx
+
+" Fzf ag under cursor
+nnoremap <Leader>a :Ag <C-R><C-W><CR>:cw<CR>
