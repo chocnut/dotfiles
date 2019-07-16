@@ -80,3 +80,11 @@ nnoremap <leader>F :Files <cr>
 nnoremap <leader>f :Gfiles <cr>
 nnoremap <leader>b :Buffers <cr>
 nnoremap <leader>a :Ag <cr>
+
+" normal mode:
+nnoremap <c-j> 5j
+nnoremap <c-k> 5k
+" visual mode:
+xnoremap <c-j> 5j
+xnoremap <c-k> 5k<Paste
+
