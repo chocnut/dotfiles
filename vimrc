@@ -31,6 +31,7 @@ call plug#end()
 
 " Color Scheme
 syntax enable
+let mapleader=","
 set ts=2 sw=2 et
 set laststatus=2
 set ruler
@@ -71,3 +72,10 @@ let g:fzf_action = {
 " Go stuff
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
+
+
+nnoremap <silent> <C-t> :FZF <cr>
+nnoremap <silent> <C-p> :FZF <cr>
+nnoremap <silent> <Leader>B :Buffers <cr>
+nnoremap <silent> <Leader>G :Ag <cr>
+nnoremap <silent> <Leader>F :Files <cr>
