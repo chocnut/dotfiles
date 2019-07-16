@@ -75,8 +75,8 @@ let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
 
 
-nnoremap <silent> <C-t> :FZF <cr>
-nnoremap <silent> <C-p> :FZF <cr>
-nnoremap <silent> <Leader>B :Buffers <cr>
-nnoremap <silent> <Leader>G :Ag <cr>
-nnoremap <silent> <Leader>F :Files <cr>
+nnoremap <C-p> :FZF <cr>
+nnoremap <leader>F :Files <cr>
+nnoremap <leader>f :Gfiles <cr>
+nnoremap <leader>b :Buffers <cr>
+nnoremap <leader>a :Ag <cr>
