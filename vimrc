@@ -40,6 +40,7 @@ set backupdir=/private/tmp
 set dir=/private/tmp
 set lazyredraw
 set clipboard+=unnamed
+set ttyfast
 
 colorscheme dracula
 
