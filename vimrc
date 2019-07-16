@@ -10,7 +10,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-commentary'
-Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
@@ -27,6 +26,8 @@ Plug 'mxw/vim-jsx',
 Plug 'janko-m/vim-test',
 Plug 'dracula/vim', { 'as': 'dracula' },
 Plug 'vim-airline/vim-airline-themes'
+" Initialize plugin system
+call plug#end()
 
 " Color Scheme
 syntax enable
