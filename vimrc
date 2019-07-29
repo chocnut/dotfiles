@@ -11,7 +11,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-commentary'
 Plug 'bling/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -23,9 +22,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'mxw/vim-jsx',
 Plug 'janko-m/vim-test',
 Plug 'dracula/vim', { 'as': 'dracula' },
-"Plug 'vim-airline/vim-airline-themes',
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'tpope/vim-vinegar'
 Plug 'itchyny/lightline.vim'
 
 " Initialize plugin system
@@ -48,8 +45,6 @@ set textwidth=80
 colorscheme dracula
 
 let g:indent_guide_start_level=2
-"let g:airline_powerline_fonts = 1
-"let g:airline_theme='dracula'
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 "noremap <C-P> :FZF<CR>
 let g:fzf_layout = { 'down': '~20%' }
@@ -120,8 +115,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+" Use <c-space> to trigger completion.  inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
