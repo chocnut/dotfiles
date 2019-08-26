@@ -24,9 +24,32 @@ Plug 'janko-m/vim-test',
 Plug 'dracula/vim', { 'as': 'dracula' },
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'posva/vim-vue'
+" coc extensions
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
+
+"------------------------ VIM TSX ------------------------
+" by default, if you open tsx file, neovim does not show syntax colors
+" vim-tsx will do all the coloring for jsx in the .tsx file
+Plug 'ianks/vim-tsx'
+"------------------------ VIM TSX ------------------------
+" by default, if you open tsx file, neovim does not show syntax colors
+" typescript-vim will do all the coloring for typescript keywords
+Plug 'leafgarland/typescript-vim'
 
 " Initialize plugin system
 call plug#end()
+
+" == AUTOCMD ================================ 
+" by default .ts file are not identified as typescript and .tsx files are not
+" identified as typescript react file, so add following
+au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead *.js setlocal filetype=typescript
+au BufNewFile,BufRead *.jsx setlocal filetype=typescript.tsx
+au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+" == AUTOCMD END ================================
+
 
 " Color Scheme
 syntax enable
@@ -234,3 +257,9 @@ if has('nvim')
     autocmd TermOpen * :set nonumber norelativenumber
   augroup END
 endif
+
+"nerd tree
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
