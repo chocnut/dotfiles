@@ -26,6 +26,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
     { import = "lazyvim.plugins.extras.editor.mini-move" },
+    { import = "lazyvim.plugins.extras.ui.alpha" },
 
     { import = "plugins" },
   },
