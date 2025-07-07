@@ -31,6 +31,17 @@ require("lazy").setup({
 
     { import = "plugins" },
   },
+  ui = {
+    -- Disable UI notifications
+    notifications = {
+      enabled = false,
+    },
+  },
+  -- Your existing checker configuration already has notifications disabled
+  checker = {
+    enabled = true,
+    notify = false,
+  },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
     -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
